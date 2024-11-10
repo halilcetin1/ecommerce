@@ -1,0 +1,69 @@
+.products-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+width: 100%;
+gap: 20px 20px;
+margin-top: 50px;
+/* background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
+
+
+}
+.card{
+ 
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+border: 1px solid lightgray;
+border-radius: 20px;
+height: 450px;
+}
+.card:hover{
+    transform: scale(1.01);
+    transition: all ease 0.2s;
+    box-shadow: 2px 3px 4px 3px rgb(216, 211, 211);
+}
+.p-img {
+    object-fit: contain;
+    height: 150px;
+    width: 140px;
+}
+.title{
+    width: 190px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.price-addbasket{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center
+    ;justify-content: space-around;
+    width:250px ;
+    gap: 30px;
+
+}
+.buttons{
+    display: flex;
+    width: 100%;
+    align-items:center ;
+    justify-content: space-around;
+
+}
+.adFav{
+    color: red;
+    font-size: 45px;
+    border: 1px dolid red;
+    cursor: pointer;
+}
+.like{
+    font-size: 40px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}

@@ -1,0 +1,24 @@
+.banner{
+    position: relative;
+}
+.img{
+  cursor: pointer;
+
+}
+.nextBtn, .prevBtn{
+font-size: 65px;
+color: black;
+background: inherit;
+height: 60px;
+width: 60px;
+border-radius: 50%;
+position: absolute;
+z-index: 5;
+cursor: pointer;}
+.nextBtn{
+    right: 5px;
+
+}
+.prevBtn{
+    left: 5px;
+}

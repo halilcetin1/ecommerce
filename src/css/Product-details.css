@@ -1,0 +1,28 @@
+.details-c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.p-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.img{
+    width: 300px;
+    object-fit: cover;
+}
+.black{
+    background-color: black;
+}
+.description{
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   color: rgb(185, 176, 176);
+  
+}

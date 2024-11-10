@@ -1,0 +1,28 @@
+.x,.face,.insta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+text-align: center;
+}
+.x,.face,.insta *{
+ color: #fff;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.insta{
+    
+    background-color: rgb(180, 43, 226);
+   
+}
+.face{
+    background-color: blue;
+}
+.x{
+
+    background-color: black;
+}

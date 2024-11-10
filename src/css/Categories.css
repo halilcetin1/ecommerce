@@ -1,0 +1,36 @@
+.categories{
+    height: 80px;
+display: flex;
+padding: 20px;
+font-size: 35px;
+gap: 20px;
+justify-content: space-around;
+scroll-behavior: auto;
+margin-top: 64px;
+
+
+}
+.categories li{
+    list-style: none;
+height: 50px;
+border-radius: 20px;
+text-align: center;
+
+width: 290px;
+padding: 0px 20px;
+cursor: pointer;
+background-color: #fb923c ;
+color: #fff;
+
+}
+.categories li:hover{
+    border: none;
+    background-color: #d97829;
+color: #fff;
+transition: all 0.3s ease-in-out;
+}
+
+
+.price{
+    color: orange;
+}

@@ -1,0 +1,40 @@
+.navbar{
+   background: #fb923c;
+   
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+font-size: 24px;
+
+}
+
+.searchInput{
+    width: 220px;
+    border-radius: 4px;
+   
+    height: 40px;
+
+
+text-align: center;
+
+}
+.login{
+    width: 100px;
+}
+::placeholder{
+    text-align: center;
+}
+
+.basket-icon{
+    cursor: pointer;
+}
+
+.refdiv{
+    display: flex;
+    
+}
+/* .searchInput:focus{
+    width: 220px;
+    transition: all 0.5s ease;
+} */

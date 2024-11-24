@@ -13,8 +13,8 @@ dispatch(getAllProducts())
    const {products}=useSelector((state)=>state.products)
 
 
-   const filteredProducts=filter(products,text)
-function filter(product,text) {
+   const filteredProducts=filtered(products,text)
+function filtered(product,text) {
 
 return product.filter((item)=>item.title.toLowerCase().includes(text.toLowerCase()))
 

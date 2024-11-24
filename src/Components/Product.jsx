@@ -62,26 +62,14 @@ const dispatch=useDispatch()
     }}>
         <img src={image} alt="" className="p-img"/>
 <h2 className="title"> {title}</h2>
-<div className="flex">
-<Rating name="half-rating-read" defaultValue={rating.rate} precision={rating.rate} readOnly /> 
-<span className="ml-1">({rating.count})</span>
-</div>
+
 
 <div className="flex justify-around items-start w-full mx-9">
-{ favori ?<FcLike className="like" onClick={(e)=>{
-       e.stopPropagation()
-    setFavori(!favori)
-}}/>:
-<MdOutlineFavoriteBorder className="like" onClick={(e)=>{
-     e.stopPropagation()
-    setFavori(!favori)
- 
-    
-}} />}
+
 <h4 className="price">{price}$</h4>
 
 </div>
-<button className="bg-orange-400 text-white w-48 rounded-full h-11 mt-14 flex justify-center items-center" onClick={(e)=>{
+<button id="add-btn"  className="bg-orange-400 text-white w-48 rounded-full h-11 mt-14 flex justify-center items-center  " onClick={(e)=>{
     e.stopPropagation()
     /**   e.stopPropagation()
      * kart tan geln eventi durdurmak için kullandım.

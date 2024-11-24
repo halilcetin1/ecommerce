@@ -14,6 +14,7 @@ import Login from "./Login"
 import LoginAndSign from "./Sign"
 import ForgetPassword from "./ForgetPassword"
 import Search from "./Search"
+import Orders from "./userInfos/Orders"
 // import LoginAndSign from "./LoginAndSign"
 function RoutesFun() {
   return (
@@ -31,6 +32,8 @@ function RoutesFun() {
 <Route path="/sig-in" element={<LoginAndSign/>}></Route>
 <Route path="/forget-password" element={<ForgetPassword/>}></Route>
 <Route path="/search/:text"element={<Search/>}></Route>
+<Route path="/orders"element={<Orders/>}></Route>
+
       </Routes>
           
           

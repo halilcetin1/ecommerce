@@ -39,6 +39,7 @@ const [count,setCount]=useState(1)
   dispatch(calculateBasket())
 
  },[])
+
   return (
     <div className='flex flex-col items-center justify-center gap-2'>
       <Helmet>
@@ -51,7 +52,7 @@ const [count,setCount]=useState(1)
     <div className='flex items-center justify-center  w-4/5 rounded-xl relative gap-12 flex-col mb-3' style={{border:"1px solid lightgray"}} onClick={()=>{
       navigate("/product-details/"+product.id)
     }}>
-      <h2 className='whitespace-nowrap overflow-hidden w-30'> {product.title}</h2>
+      <h2 className='whitespace-nowrap overflow-hidden w-30 title'> {product.title}</h2>
       <div className='flex items-center justify-center gap-8'>
       <img className='w-20 mb-3' src={product.image} alt=""  />
       <div className='flex gap-3'>
@@ -106,15 +107,13 @@ const [count,setCount]=useState(1)
       </div>
       </div>
      
-      <h4 className='text-orange-300 absolute bottom-1 right-2'>${product.count*product.price}</h4>
+      <h4 className='text-orange-300 absolute bottom-1 right-2'>${Math.floor(product.count*product.price)}</h4>
     </div>
   ))
 }
 <div className='w-full items-center justify-around flex mb-10'>
 { basketLength? <p className='text-2xl'>Toplam tutar :   <span className='text-orange-300'> $ {Math.floor(totalAmount)}</span></p>: <span></span>}
- {/* {
-  basketLength  ? <button className='bg-orange-400 text-white p-3 rounded-2xl' onClick={()=>{navigate("/payments")}}>Sepeti onayla</button> : <p>Sepetiniz boş</p>
- } */}
+
 </div>
 {
   basketLength  ? <button className='bg-orange-400 text-white p-3 rounded-2xl'

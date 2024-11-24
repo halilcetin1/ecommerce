@@ -22,10 +22,16 @@ export default function Login() {
     const [showIcon,setShowIcon]=useState(false)
     const [error,setError]=useState("")
     const inputref=useRef()
+
     const handleSubmit=(e)=>{
         e.preventDefault()
 if(!email || !password) return;
-signInWithEmailAndPassword(auth,email,password).then(()=>{
+signInWithEmailAndPassword(auth,email,password).then((e)=>{
+
+
+
+
+
 dispatch(openedLoading())
 setTimeout(() => {
   dispatch(stopedLoading())

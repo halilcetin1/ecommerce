@@ -1,6 +1,5 @@
 .navbar{
-   background: #fb923c;
-   
+   overflow-x: hidden;
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -34,7 +33,4 @@ text-align: center;
     display: flex;
     
 }
-/* .searchInput:focus{
-    width: 220px;
-    transition: all 0.5s ease;
-} */
+

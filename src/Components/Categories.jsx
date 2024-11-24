@@ -14,6 +14,10 @@ function Categories() {
      <li onClick={()=>navigate("/mens")}>Erkek</li>
      <li onClick={()=>navigate("/jewelery")}>Takı/Aksesuar</li>
      <li onClick={()=>navigate("/womens")}>Kadın</li>
+     <li onClick={()=>navigate("/womens")}>Kadın</li>
+     <li onClick={()=>navigate("/womens")}>Kadın</li>
+     <li onClick={()=>navigate("/womens")}>Kadın</li>
+     <li onClick={()=>navigate("/womens")}>Kadın</li>
     
    
     

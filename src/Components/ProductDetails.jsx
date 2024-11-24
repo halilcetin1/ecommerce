@@ -7,17 +7,34 @@ import { useLocation, useParams } from "react-router-dom";
 import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
 import { IoIosAddCircle, IoIosArrowBack } from "react-icons/io";
 import { GrSubtractCircle } from "react-icons/gr";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToBasket, calculateBasket } from "../redux/basketSlice";
 import { IoShareOutline } from "react-icons/io5";
+import { toast } from "react-toastify";
 export default function ProductDetails() {
     useEffect(()=>{
     getProduct()
         
         
     },[])
+    let control=true
     const {id}=useParams()
+const controlProducts=()=>{
+  const {basket}=useSelector((state)=> state.basket)
+basket.forEach(product => {
+  
 
+  
+  if(id==product.id && product.count>9){
+  // kullanıcı  sepete en fazla 10 ürün ekleyebilsin diye sınırlama getirdim
+   control=false;
+  }
+  
+  
+});
+
+}
+controlProducts()
 const dispatch=useDispatch()
 const [data,setData]=useState({})
  async function getProduct(){
@@ -39,47 +56,79 @@ const [save,setSave]=useState(false)
  const [count ,setCount]=useState(1)
   
 const addBasket=()=>{
+  if(!control){
+toast.warning("limit doldu")
+return;
+  }
   const payload={
     id,image,title,price,count
   }
  dispatch(addToBasket(payload)) 
  dispatch(calculateBasket())
+ toast.success(<div className="h-20"><h2>Sepete Eklendi</h2>
+ <button className="bg-orange-500">Sepete git</button>
+ </div> , {
+          position:'top-center',
+          theme:'light',
+          type:'success',
+       hideProgressBar:true,
+       autoClose:800
+         })
 }
 //window.history.back()
 
 
   return (
-    <div className="flex justify-items-center items-center    w-2/3 h-3/4 mt-7 gap-10 ml-16">
-        { data &&
- <div className="p-card flex items-center  justify-center  ">
-   <div>
-   <img className="img" src={image} alt="" />
-   </div>
-    <h3 className="mb-3">{title}</h3>
-    <p className="description">{description}</p>
-   <div className="flex ">
-   <Rating name="half-rating" readOnly value={3}  precision={0.5}></Rating>
-   <h4 className="mx-2"></h4>
-   </div>
-    <h4>Kategori : {category} </h4>
-   
-    <p className=" absolute text-2xl top-24 left-2 mr-4 text-orange-400 cursor-pointer flex items-center justify-center text-center" onClick={()=>window.history.back()}> <IoIosArrowBack/> Geri</p>
-   {/* */}
+    <div className="flex justify-items-center items-center    w-2/3 h-3/4 mt-7 gap-10 ml-16 max-sm:flex-col max-md:flex-col">
+        { data &&   <div> 
+  
+  
+  <img className="img" src={image} alt="" />
+  <h3 className="mb-3">{title}</h3>
+   <p className="description">{description}</p>
  
-    </div>
+  <Rating name="half-rating" readOnly value={3}  precision={0.5}></Rating>
+  <h4 className="mx-2"></h4>
+
+   <h4>Kategori : {category} </h4>
+ 
+ 
+ </div>
+ 
+  
+
+
+   
+   
+   
+ 
+    
 
 
         }
-<div className="">
-  <div className="flex justify-center items-center ">  <GrSubtractCircle className="text-4xl mr-3 hover:cursor-pointer" onClick={()=>{
+<div className="flex items-center p-4 gap-3">
+<div className=" max-sm:fixed max-sm:bottom-0 max-sm:z-20 max-sm:bg-gray-100 max-sm:w-full max-sm:h-20 max-sm:items-center max-sm:justify-around max-sm:p-5">
+<div className="flex items-center  gap-4 "> 
+  <div className="flex  items-start justify-center  ">
+  <GrSubtractCircle className="text-4xl mr-3 hover:cursor-pointer" onClick={()=>{
     if(count>1)
-    setCount(count-1)
+    setCount(count-1)        
   }}  /> 
   <span className="text-4xl">{count}</span><IoIosAddCircle className="text-4xl ml-3 hover:cursor-pointer" onClick={()=>{
     if(count<=9)
     setCount(count+1)
-  }}/>  </div>
-<button className="bg-orange-400 text-white w-48 rounded-full h-11 mt-14 flex justify-center items-center" onClick={addBasket}>Sepete ekle</button>  
+  }}/> 
+  </div>
+  
+<div className="">
+<button className="bg-orange-500 text-white w-48 rounded-full h-11  flex justify-center items-center" onClick={addBasket}>Sepete ekle</button>  
+</div>
+   </div>
+   {/* diğer içerikler */}
+</div>
+
+
+
 <div className="flex justify-between items-center  w-36">{save ?  <MdBookmarkAdded onClick={()=>setSave(!save)}  className="text-5xl h-28 hover:cursor-pointer"/>  :<MdBookmarkBorder  className="text-5xl h-28 hover:cursor-pointer" onClick={()=>setSave(!save)}/>}
 <IoShareOutline className=" ml-4 text-4xl cursor-pointer"  onClick={()=>{
   if(navigator.share){
@@ -94,13 +143,25 @@ alert("başarıyla paylaşıldı.")})
   }
 }}/>
 
-{/* <h3 className="text-3xl " onClick={()=>{
-  window.history.back()
-}}>geri</h3> */}
+
 
 </div>
 </div>
+
     </div>
   )
 }
 
+
+/**
+ * 
+ * 
+ *    <img className="img" src={image} alt="" />
+   <h3 className="mb-3">{title}</h3>
+    <p className="description">{description}</p>
+   < className="flex ">
+   <Rating name="half-rating" readOnly value={3}  precision={0.5}></Rating>
+   <h4 className="mx-2"></h4>
+
+    <h4>Kategori : {category} </h4>
+ */

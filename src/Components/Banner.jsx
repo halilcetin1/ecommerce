@@ -9,20 +9,10 @@ function Banner() {
   const foto=[banner1,banner2,banner3]
   const [index ,setIndex]=useState(0)
   const [src,setSrc]=useState(foto[index])
-  setInterval(() => {
- if(index<=3){
-  setIndex(index+1)
  
-  setSrc(foto[index])
-  if(index==foto.length-1){
-    setIndex(0)
-    setSrc(foto[index])
-  }
- }
- 
-    
-  }, 3000);
   function nexSlider(){
+    // next butonuna basıldığında indexi bir artırıp var olan fotoğrafı gunceller.
+    
     if(index<3){
       setIndex(index+1)
       setSrc(foto[index])
@@ -42,11 +32,10 @@ function Banner() {
     }
   }
  
-  const navigate=useNavigate(
- 
-  )
+
   return (
-    <div className='flex justify-center items-center banner w-full' >
+ <div className='flex w-full items-center justify-center mt-7 container-banner'>
+     <div className='flex justify-center items-center banner w-3/4 relative' >
       <FcPrevious onClick={prevSlider} className='prevBtn' />
       <a href='' >
       <img className='img w-full ' src={src} alt=""  />
@@ -54,6 +43,7 @@ function Banner() {
       </a>
       <FcNext onClick ={nexSlider}className='nextBtn' />
     </div>
+ </div>
   )
 }
 

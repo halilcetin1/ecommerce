@@ -24,18 +24,18 @@ const seacrhProducts=()=>{
   navigate("/search/"+text)
 }
   return (
-   <div className="w-full fixed top-0 h-16  z-20 bg-orange-400 flex items-center justify-around">
+   <div className="w-full fixed top-0 h-16  z-20 bg-orange-500 flex items-center justify-around   max-sm:flex ">
     <a className='text-white
-     hover:cursor-pointer' onClick={()=>navigate("/")}>Logo</a>
-    <input className='searchInput outline-none ' type="text" placeholder='Ürün ara' onChange={(e)=>{
+     hover:cursor-pointer max-sm:ml-2' onClick={()=>navigate("/")}>Logo</a>
+    <input className='searchInput outline-none max-sm:w-36 max-sm:ml-3' type="text" placeholder='Ürün ara' onChange={(e)=>{
       setText(e.target.value)
     }} />
    {/* <IoMdSearch className='text-[32px] color-white cursor-pointer  h-6 w-10' id='searchIcon'/> */}
-   <button className='text-[20px] color-white  cursor-pointer  h-6 w-10 flex items-center justify-center' id='searchIcon'  onClick={seacrhProducts}> <IoMdSearch className='text-[20px]  text-white  hover:bg-orange-300'/> </button>
+   <button className=' color-white  cursor-pointer  h-7 w-11 flex items-center justify-center' id='searchIcon'  onClick={seacrhProducts}> <IoMdSearch className=' text-white  hover:bg-orange-300 max-sm:text-4xl '/> </button>
    
-   <div className='flex p-4  justify-between login  w-48 '>
+   <div className='flex p-4  justify-between login  w-48 max-sm:w-28 max-sm:justify-beetwen'>
  
-    <Badge badgeContent={basket.length} color='secondary'>
+    <Badge badgeContent={basket.length} color='warning'>
     <FaCartShopping className='text-white  basket-icon text-[32px] cursor-pointer ' onClick={()=>{
 navigate("/basket-products")
       dispatch(calculateBasket())

@@ -54,15 +54,15 @@ transition: all 0.5s;
 transform: scale(1.1);
 
 }
-#submitBtn[disabled]{
+/* #submitBtn[disabled]{
   background-color: rgb(150, 153, 153);
-}
-#submit-loginBtn[disabled]{
+} */
+/* #submit-loginBtn[disabled]{
   background-color: rgb(150, 153, 153);
 
-}
+} */
 #footer{
-  border-top: 1px solid ;
+ 
   background-color: #f5f5f5;
 }
 body{

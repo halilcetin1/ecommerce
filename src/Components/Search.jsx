@@ -25,7 +25,9 @@ return product.filter((item)=>item.title.toLowerCase().includes(text.toLowerCase
  
 
 
-
+if(filteredProducts==null || !filteredProducts){
+  return(<div className='mt-40 bg-black'>Aradığınız ürün bulunamadı.</div>)
+} 
   
   return (
     <div className='flex flex-wrap items-center justify-center mt-14 gap-5'>

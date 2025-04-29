@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../css/Banner.css'
 import banner1 from '../source/banner1.webp'
 import banner2 from '../source/banner2.webp'
@@ -31,7 +31,15 @@ function Banner() {
       setSrc(foto[index])
     }
   }
- 
+ useEffect(()=>{
+ const clear= setInterval(() => {
+    nexSlider()
+  }, 2000);
+
+  return ()=>{
+    clearInterval(clear);
+  } 
+ },[index])
 
   return (
  <div className='flex w-full items-center justify-center mt-7 container-banner'>

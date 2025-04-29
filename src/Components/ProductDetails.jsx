@@ -107,7 +107,7 @@ return;
 
         }
 <div className="flex items-center p-4 gap-3">
-<div className=" max-sm:fixed max-sm:bottom-0 max-sm:z-20 max-sm:bg-gray-100 max-sm:w-full max-sm:h-20 max-sm:items-center max-sm:justify-around max-sm:p-5">
+<div className=" max-sm:fixed max-sm:bottom-0 max-sm:z-20 max-sm:bg-gray-100 max-sm:w-full max-sm:left-0 max-sm:h-20 max-sm:items-center max-sm:justify-around max-sm:p-5">
 <div className="flex items-center  gap-4 "> 
   <div className="flex  items-start justify-center  ">
   <GrSubtractCircle className="text-4xl mr-3 hover:cursor-pointer" onClick={()=>{

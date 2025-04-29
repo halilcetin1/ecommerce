@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import React, { useRef, useState } from 'react'
+import  { useRef, useState } from 'react'
 import { auth } from '../firebase/firebase'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -46,22 +46,17 @@ setTimeout(() => {
     }
   return (
 
-    <div className=' m-32  flex items-center justify-center flex-col'>
-<h1 className='text-center text-2xl mb-10'>Girş yap</h1>
+    <div className=' mt-32   flex items-center justify-center flex-col max-sm:w-full  '>
+<h1 className='text-center text-2xl mb-10 text-orange-400'>Girş yap</h1>
 
       
-<form action="" onSubmit={handleSubmit} className='flex flex-col gap-11 p-3'>
+<form action="" onSubmit={handleSubmit} className='flex flex-col gap-11 p-3 max-sm:items-center max-sm:w-full '>
 
 
-<Input  color='secondary' onChange={(e)=>setEmail(e.currentTarget.value)} placeholder='E-posta'/> 
+<Input className=' w-80 max-sm:w-4/5 mb-10' color='secondary' onChange={(e)=>setEmail(e.currentTarget.value)} placeholder='E-posta'/> 
   
 
-<Input  color='secondary' sx={
-  {
-    width:"400px",
-    height:"48px",borderRadius:"10px",borderBottom:"none"
-  }
-} placeholder='Şifre'  type='password' ref={inputref} endAdornment={showIcon ?<FaLowVision className='text-3xl  cursor-pointer' onClick={()=>{setShowIcon(false)
+<Input className='max-sm:w-4/5'  color='secondary'  placeholder='Şifre'  type='password' ref={inputref} endAdornment={showIcon ?<FaLowVision className='text-3xl  cursor-pointer' onClick={()=>{setShowIcon(false)
       inputref.current.children[0].type='password'
 
 
@@ -75,8 +70,8 @@ setTimeout(() => {
   }/>
 } onChange={(e)=>setPassword(e.currentTarget.value)} />
 {error&& <p className='text-red-500'>{error}</p>}
-<div className='flex' ><input type="checkbox" name="" id="remember" className='text-white'  /> <span id='remember'>Beni hatırla</span> <Link to='/forget-password' className='ml-auto text-blue-500'>Şifreni mi unuttun ?</Link></div>
-    <button id='submit-loginBtn' disabled={!email || !password} type="submit" className='bg-orange-400 h-12 rounded-md text-white text-xl'>Giriş yap</button>
+<div className='flex max-sm:p-1 max-sm:gap-3' > <span id='remember' className='flex gap-1 items-center'><input type="checkbox" name="" id="remember" className='text-white'  /> Beni hatırla</span> <Link to='/forget-password' className='ml-auto text-blue-500'>Şifreni mi unuttun ?</Link></div>
+    <button id='submit-loginBtn' disabled={!email || !password} type="submit" className='bg-orange-500 h-12 rounded-md text-white text-xl disabled:bg-orange-200 max-sm:w-4/5'>Giriş yap</button>
     
 </form>
 <p>Hesabın yok mu?<Link to="/sig-in" className='text-blue-600'>Kayıt Ol</Link></p>

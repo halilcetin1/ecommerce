@@ -6,7 +6,7 @@ function Categories() {
   
   
   return (
-    <div className="    categories   " >
+    <div className="    categories  justify-between text-3xl max-sm:text-2xl  " >
      <li className='relative' id='electronic' onClick={()=>navigate("/electronic")}>Elektronik
      
     
@@ -14,10 +14,7 @@ function Categories() {
      <li onClick={()=>navigate("/mens")}>Erkek</li>
      <li onClick={()=>navigate("/jewelery")}>Takı/Aksesuar</li>
      <li onClick={()=>navigate("/womens")}>Kadın</li>
-     <li onClick={()=>navigate("/womens")}>Kadın</li>
-     <li onClick={()=>navigate("/womens")}>Kadın</li>
-     <li onClick={()=>navigate("/womens")}>Kadın</li>
-     <li onClick={()=>navigate("/womens")}>Kadın</li>
+     
     
    
     

@@ -2,7 +2,7 @@ import { Button, ButtonBase, Rating } from "@mui/material"
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { FcLike } from "react-icons/fc";
 import { GrFavorite } from "react-icons/gr";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MdAddShoppingCart, MdOutlineFavoriteBorder } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -37,17 +37,16 @@ const dispatch=useDispatch()
         }
        dispatch(addToBasket(payload)) 
     dispatch(calculateBasket())
-  toast.success(<div className="flex flex-col w-full h-28">
-   <p  className="text-green-500 ">Sepete Eklendi</p>
-  <p className="mt-5 text-center text-2xl text-white bg-green-500 rounded-full  border-solid border-green-400 cursor-pointer" onClick={()=>{
- setTimeout(() => {
-    navigate("/basket-products")
- }, 500);
-  }}>sepete git</p>
-   
+  toast.success(<div  className="items-center justify-center">
+    <h1>Sepete Ekleni</h1>
+    <button className="text-orange-500 mt-4 justify-center items-center text-center" onClick={()=>{
+      navigate("/basket-products")
+
+
+    }}>Sepete Git</button>
   </div>, {
            position:'top-center',
-           theme:"dark",
+        
            type:'success',
         hideProgressBar:true,
         autoClose:1000
@@ -69,7 +68,7 @@ const dispatch=useDispatch()
 <h4 className="price">{price}$</h4>
 
 </div>
-<button id="add-btn"  className="bg-orange-400 text-white w-48 rounded-full h-11 mt-14 flex justify-center items-center  " onClick={(e)=>{
+<button id="add-btn"  className="bg-orange-500 text-white w-48 rounded-full h-11 mt-14 flex justify-center items-center  " onClick={(e)=>{
     e.stopPropagation()
     /**   e.stopPropagation()
      * kart tan geln eventi durdurmak için kullandım.

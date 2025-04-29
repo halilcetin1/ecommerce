@@ -31,7 +31,7 @@ function Footer() {
 <div className="flex flex-col gap-2">
   <a href="">Sıkça Sorulan Sorular</a>
   <a href="">Şikayetler/Talepler</a>
-  <a href="">Canlı Yardım</a>
+  <a href="">Canlı Destek</a>
 </div>
 
 </div>
@@ -44,7 +44,7 @@ function Footer() {
   © 2024 Tüm hakkları saklıdır.
   </p>
 </div>
-{/* w-full bg-black text-xl absolute bottom-1 text-white text-center font-bold */}
+
     </div>
   )
 }
